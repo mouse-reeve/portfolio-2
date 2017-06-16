@@ -1,5 +1,5 @@
 ''' portfolio site app '''
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import math
 import random
 from ascii_art import placevalue_patterner
@@ -33,9 +33,10 @@ def mainpage():
     function = functions[fun]
 
     data = {
-        'ascii_header': placevalue_patterner(function[0],
-                                             128, 256,
-                                             placevalue),
+        'ascii_header': placevalue_patterner(
+            function[0], 128, 256, placevalue),
+        'ascii_footer': placevalue_patterner(
+            function[0], 32, 256, placevalue, offset_y=129),
         'function': function[1],
         'placevalue': placevalue,
     }

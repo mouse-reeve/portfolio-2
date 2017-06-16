@@ -1,10 +1,10 @@
 ''' print out binary place value patterns '''
 
-def placevalue_patterner(function, height, width, placevalue):
+def placevalue_patterner(function, height, width, placevalue, offset_y=0):
     ''' create a visualization of a place value pattern '''
     pad = placevalue + 20
     visual = []
-    for i in range(height):
+    for i in range(offset_y, offset_y + height):
         row = ''
         for j in range(width):
             value = function(i, j)

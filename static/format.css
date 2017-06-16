@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-header {
+header, footer {
     position: relative;
 }
 
@@ -16,7 +16,7 @@ header {
     overflow: hidden;
 }
 
-h1, nav li {
+h1, nav li, footer p {
     background-color: white;
     padding: 0.5em 2em;
 }
@@ -48,4 +48,27 @@ nav li:last-child {
 #main {
     margin-top: 3em;
     padding: 1em;
+    overflow: auto;
+}
+
+.card {
+    min-height: 10rem;
+    width: 11rem;
+    float: left;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.card a h2 {
+    color: black;
+}
+.card p {
+    margin-top: 1em;
+}
+
+footer p {
+    position: absolute;
+    top: 25%;
+    left: 5em;
 }
