@@ -6,13 +6,6 @@ from ascii_art import placevalue_patterner
 
 app = Flask(__name__)
 
-def before_request():
-    ''' temp code for testing because this version of flask
-    isn't picking up template changes '''
-    app.jinja_env.cache = {}
-app.before_request(before_request)
-
-
 @app.route('/')
 def mainpage():
     ''' render the home page '''
