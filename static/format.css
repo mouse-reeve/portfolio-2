@@ -69,7 +69,7 @@ q {
 }
 
 .card, .spacer {
-    min-height: 10rem;
+    min-height: 11rem;
     width: 11rem;
     float: left;
     margin: 1em;
