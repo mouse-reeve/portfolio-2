@@ -4,6 +4,11 @@
     margin: 0;
 }
 
+body > * {
+    margin: 0 auto;
+    max-width: 82em;
+}
+
 header, footer {
     position: relative;
 }
@@ -51,14 +56,31 @@ nav li:last-child {
     overflow: auto;
 }
 
-.card {
+#main > p {
+    margin: 1em 0 5em 5em;
+    max-width: 50em;
+}
+q {
+    font-size: 1.2rem;
+    display: block;
+}
+.caption {
+    float: right;
+}
+
+.card, .spacer {
     min-height: 10rem;
     width: 11rem;
     float: left;
     margin: 1em;
     padding: 1em;
-    border: 1px solid black;
     border-radius: 5px;
+}
+.card {
+    border: 1px solid black;
+}
+.spacer {
+    border: 1px solid white;
 }
 .card a h2 {
     color: black;
@@ -67,6 +89,9 @@ nav li:last-child {
     margin-top: 1em;
 }
 
+footer {
+    margin-top: 7em;
+}
 footer p {
     position: absolute;
     top: 25%;
