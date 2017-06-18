@@ -15,3 +15,7 @@ def placevalue_patterner(function, height, width, placevalue, offset_y=0):
         visual.append(row)
     return '\n'.join(visual)
 
+# example
+if __name__ == '__main__':
+    func = lambda x, y: x ** 2 * y ** 2
+    print placevalue_patterner(func, 128, 128, 7)
