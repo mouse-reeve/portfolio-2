@@ -1,5 +1,6 @@
 ''' portfolio site app '''
 from flask import Flask, render_template
+from jinja2.exceptions import TemplateNotFound
 import math
 import random
 from ascii_art import placevalue_patterner
@@ -9,6 +10,21 @@ app = Flask(__name__)
 @app.route('/')
 def mainpage():
     ''' render the home page '''
+    data = get_placevalue()
+    return render_template('index.html', **data)
+
+@app.route('/<page>')
+def subpage(page):
+    ''' load an arbitrary subpage '''
+    data = get_placevalue()
+    try:
+        return render_template('%s.html' % page, **data)
+    except TemplateNotFound:
+        return render_template('notfound.html', **data), 404
+
+
+def get_placevalue():
+    ''' load a placevalue function '''
     placevalue = random.randint(6, 8)
 
     functions = [
@@ -25,7 +41,7 @@ def mainpage():
     fun = random.randint(0, len(functions) - 1)
     function = functions[fun]
 
-    data = {
+    return {
         'ascii_header': placevalue_patterner(
             function[0], 128, 256, placevalue),
         'ascii_footer': placevalue_patterner(
@@ -33,8 +49,6 @@ def mainpage():
         'function': function[1],
         'placevalue': placevalue,
     }
-
-    return render_template('index.html', **data)
 
 
 if __name__ == '__main__':

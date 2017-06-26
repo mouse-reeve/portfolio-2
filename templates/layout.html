@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mouse Reeve</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/format.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mouse Reeve : Portfolio">
+    <meta name="og:title" content="Mouse Reeve : Portfolio">
+    <meta name="twitter:description" content="Mouse Reeve writes code at the Internet Archive, writes more code for fun, and spends a lot of time thinking about nonsense.">
+    <meta name="og:description" content="Mouse Reeve writes code at the Internet Archive, writes more code for fun, and spends a lot of time thinking about nonsense.">
+    <meta name="twitter:creator" content="@tripofmice">
+    <meta name="twitter:site" content="@tripofmice">
+
+    <meta name="twitter:image" content="https://www.mousereeve.com/static/images/selfie.jpg">
+    <meta name="og:image" content="https://www.mousereeve.com/static/images/selfie.jpg">
+    <meta name="twitter:image:alt" content="Mouse cuddling with her cat">
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//piwik.grimoire.org/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 2]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//piwik.grimoire.org/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+</head>
+
+<body>
+
+    <header>
+        <div class="ascii">{{ ascii_header }}</div>
+        <h1>Mouse Reeve</h1>
+        <nav>
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="https://twitter.com/tripofmice" target="_blank">twitter</a></li>
+                <li><a href="https://github.com/mouse-reeve" target="_blank">github</a></li>
+                <li><a href="https://blog.mousereeve.com" target="_blank">blog</a></li>
+                <li>
+                    <a href="https://github.com/mouse-reeve/placevalue_ascii" target="_blank">
+                        <code>{{ function }}</code></a>, place value <code>{{ placevalue }}</code>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="main">
+        {% block body %}{% endblock %}
+    </section>
+
+
+    <footer>
+        <div class="ascii">{{ ascii_footer }}</div>
+        <p>
+            <a href="mailto:mousereeve@riseup.net">mousereeve@riseup.net</a>
+            <br><br>
+            Mouse Reeve<br>
+            PO Box 22562<br>
+            San Francisco, CA 94122
+        </p>
+    </footer>
+</body>
+</html>

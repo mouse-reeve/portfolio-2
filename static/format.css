@@ -76,7 +76,7 @@ q {
     padding: 1em;
     border-radius: 5px;
 }
-.card {
+.card, .clock {
     border: 1px solid black;
 }
 .spacer {
@@ -89,11 +89,23 @@ q {
     margin-top: 1em;
 }
 
+.clock {
+    width: 11rem;
+    margin: 1em;
+    padding: 1em;
+    float: left;
+    border-radius: 5px;
+}
+.clock .label {
+    height: 3rem;
+    line-height: 1em;
+}
+
 footer {
     margin-top: 7em;
 }
 footer p {
     position: absolute;
-    top: 25%;
+    top: 10%;
     left: 5em;
 }
