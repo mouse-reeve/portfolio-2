@@ -207,8 +207,11 @@ var clocks = [
 var update_clocks = function () {
     var now = new Date();
     for (var i = 0; i < clocks.length; i++) {
-        var time = clocks[i].clock(now);
-        document.getElementById(clocks[i].name).innerHTML = time;
+        var current = document.getElementById(clocks[i].name);
+        if (current) {
+            var time = clocks[i].clock(now);
+            current.innerHTML = time;
+        }
     }
 };
 
