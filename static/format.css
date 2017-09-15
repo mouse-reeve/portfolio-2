@@ -68,6 +68,10 @@ q {
     float: right;
 }
 
+.cards {
+    overflow: auto;
+}
+
 .card, .spacer {
     min-height: 11rem;
     width: 11rem;
@@ -118,6 +122,7 @@ q {
 }
 
 .outro {
+    display: block;
     margin-top: 3em;
 }
 
