@@ -101,6 +101,26 @@ q {
     line-height: 1em;
 }
 
+#resume div {
+    margin-bottom: 1em;
+}
+
+#resume li {
+    list-style: none;
+    display: inline;
+    margin: 0 0.2em;
+}
+
+.replace {
+    text-align: center;
+    color: blue;
+    text-decoration: underline;
+}
+
+.outro {
+    margin-top: 3em;
+}
+
 footer {
     margin-top: 7em;
 }
