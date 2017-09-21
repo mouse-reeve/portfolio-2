@@ -37,6 +37,9 @@ def get_placevalue():
         [lambda x, y: 50 * math.sqrt(x + y), '50 * sqrt(x + y)'],
         [lambda x, y: 5 * math.sqrt(x**2 + y**2), '5 * sqrt(x^2 + y^2)'],
         [lambda x, y: 5 * math.sqrt(abs(x**2 - y**2)), '5 * sqrt(|x^2 - y^2|)'],
+        [lambda x, y: ((x ** y) + (y ** x)) * 8, '8 * (x^y + y^x)'],
+        [lambda x, y: ((x ** y) * (y ** x)) * 4, '4 * (x^y * y^x)'],
+        [lambda x, y: ((x ** y) - (y ** x)) * 8, '8 * (x^y - y^x)'],
     ]
     fun = random.randint(0, len(functions) - 1)
     function = functions[fun]
