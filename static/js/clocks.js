@@ -21,7 +21,7 @@ var toNegativeBase = function (input, radix, noDelimiter) {
         var number = numbers[i];
         var result = 0;
 
-        while (number !== 0) {
+        while (number != 0) {
             var exp = number > 0 ? 0 : 1;
             var sum = 0;
             while (Math.abs(sum) < Math.abs(number)) {
