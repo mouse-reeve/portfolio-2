@@ -1,6 +1,7 @@
 ''' portfolio site app '''
 from flask import Flask, render_template
 from jinja2.exceptions import TemplateNotFound
+import json
 import math
 import random
 from ascii_art import placevalue_patterner
@@ -13,6 +14,7 @@ def mainpage():
     data = get_placevalue()
     return render_template('index.html', **data)
 
+
 @app.route('/<page>')
 def subpage(page):
     ''' load an arbitrary subpage '''
@@ -22,10 +24,15 @@ def subpage(page):
     except TemplateNotFound:
         return render_template('notfound.html', **data), 404
 
+@app.route('/placevalue/<function_id>/<placevalue>')
+def get_ascii(function_id, placevalue):
+    ''' endpoint to get ascii art data object '''
+    return json.dumps(get_placevalue(fun=function_id, placevalue=placevalue))
 
-def get_placevalue():
+
+def get_placevalue(fun=None, placevalue=None):
     ''' load a placevalue function '''
-    placevalue = random.randint(6, 8)
+    placevalue = random.randint(6, 8) if placevalue == None else placevalue
 
     functions = [
         [lambda x, y: x ** 2 * y ** 2, 'x^2 * y^2'],
@@ -41,16 +48,17 @@ def get_placevalue():
         [lambda x, y: ((x ** y) * (y ** x)) * 4, '4 * (x^y * y^x)'],
         [lambda x, y: ((x ** y) - (y ** x)) * 8, '8 * (x^y - y^x)'],
     ]
-    fun = random.randint(0, len(functions) - 1)
+    if fun != None and (fun < 0 or fun > len(functions) - 1):
+        fun = None
+    fun = random.randint(0, len(functions) - 1) if fun == None else fun
     function = functions[fun]
 
     return {
         'ascii_header': placevalue_patterner(
-            function[0], 128, 256, placevalue),
-        'ascii_footer': placevalue_patterner(
-            function[0], 32, 256, placevalue, offset_y=129),
+            function[0], 256, 256, placevalue),
         'function': function[1],
         'placevalue': placevalue,
+        'function_id': fun,
     }
 
 

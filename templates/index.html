@@ -1,232 +1,82 @@
+{% macro project(title, url, collab, collab_url) %}
+<div class="project">
+    <p class="title">
+        <a href="{{ url }}">{{ title }}</a>
+        {% if collab %}<small>with <a href="{{ collab_url }}" target="_blank">{{ collab }}</a></small>{% endif %}
+    </p>
+    <p class="description">
+        {{ caller() }}
+    </p>
+</div>
+{% endmacro %}
 {% extends "layout.html" %}
+{% set is_index = true %}
 {% block body %}
+<h1>Mouse Reeve</h1>
+<div id="projects">
+{% call project('dockerlang',
+                'https://github.com/connorwalsh/dockerlang',
+                'Connor Walsh',
+                'http://polygon.pizza/') %}
+A turing complete language based on docker containers
+{% endcall %}
 
-<p>
-    <q>Anyone who uses arithmetic methods to produce random numbers is in a state of sin.</q>
-    <span class="caption">--- John von Neumann</span>
-</p>
+{% call project('in the key of OCR',
+                'https://soundcloud.com/tripofmice') %}
+Converting sheet music to audio with OCR and text to speech
+{% endcall %}
 
-<div class="cards">
-<div class="card">
-    <h2>
-        <a href="https://twitter.com/botaphor" target="_blank">botaphor</a>
-    </h2>
-    <div class="info">
-        <span class="year">2017</span>
-    </div>
-    <p>My bot is like a summer's day</p>
+{% call project('oulipo.social',
+                'https://oulipo.social/') %}
+A Dcntralizd and Fdratd Social Ntwork
+{% endcall %}
+
+{% call project('antiquated omi',
+                'https://omi.mousereeve.com/') %}
+A novel in collaboration with Ernest Hemingway and the Wordnik API
+{% endcall %}
+
+{% call project('bird facts',
+                 'https://twitter.com/bird_facts_bot') %}
+More like bird malicious gossip
+{% endcall %}
+
+{% call project('all alone now',
+                'https://www.allalonenow.com/',
+                'Emily E. Meo',
+                'https://www.emilyemeo.com/'
+                ) %}
+Are we alone in the universe? In the world?
+{% endcall %}
+
+{% call project('brand new facts',
+                 'https://twitter.com/brand_new_facts') %}
+The hottest new facts, fresh from the oven
+{% endcall %}
+
+{% call project('grimoire.org',
+                'https://www.grimoire.org/') %}
+Indexing historical texts on magic and the occult
+{% endcall %}
+
+{% call project('clocks',
+                '/clocks') %}
+How much longer do I have left
+{% endcall %}
+
+{% call project('drift',
+                'http://www.julialemke.com/index/#/drift/',
+                'Julia Lemke',
+                'http://www.julialemke.com/'
+                ) %}
+To Make a Dadaist Poem...
+{% endcall %}
 </div>
 
-<div class="card">
-    <h2>
-        <a href="https://soundcloud.com/tripofmice/tracks" target="_blank">in the key of OCR</a>
-    </h2>
-    <div class="info">
-        <span class="year">2017</span>
-    </div>
-    <p>Converting sheet music to audio with OCR and text to speech</p>
+<div class="contact">
+    <a href="mailto:mousereeve@riseup.net">mousereeve@riseup.net</a>
+    <a href="https://github.com/mouse-reeve">github</a>
+    <a href="https://blog.mousereeve.com/">blog</a>
 </div>
 
-
-
-
-<div class="spacer">
-    <p>Mouse Reeve writes code at the <a href="https://archive.org/" target="_blank">Internet Archive</a>,</p>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://csvconf.com/speakers/#mouse-reeve" target="_blank">csv,conf,v3 talk</a>
-    </h2>
-    <div class="info">
-        <span class="year">2017</span>
-        <a href="https://www.mousereeve.com/static/csvconf-2017-nonsense.pdf" target="_blank">slides</a>
-    </div>
-    <p>The Art and Science of Generative Nonsense</p>
-</div>
-
-<div class="card">
-    <h2><a href="https://oulipo.social/" target="_blank">
-        oulipo.social
-    </a></h2>
-    <div class="info">
-        <span class="year">2017</span>
-        <a href="https://motherboard.vice.com/en_us/article/its-like-tweeting-but-you-cant-use-the-letter-e" target="_blank">press</a>
-    </div>
-
-    <p>A Dcntralizd and Fdratd Social Ntwork</p>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://omi.mousereeve.com/" target="_blank">antiquated omi</a>
-    </h2>
-    <div class="info">
-        <span class="year">2017</span>
-    </div>
-    <p>A novel in collaboration with Ernest Hemingway and the Wordnik API</p>
-</div>
-
-
-
-<div class="spacer">
-    <p>writes more code for fun,</p>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://twitter.com/bird_facts_bot" target="_blank">bird facts</a>
-    </h2>
-    <div class="info">
-        <span class="year">2016</span>
-    </div>
-    <p>More like bird malicious gossip</p>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://www.allalonenow.com/" target="_blank">all alone now</a>
-    </h2>
-    <div class="info">
-        <span class="year">2016</span>
-    </div>
-    <p>Are we alone in the universe? In the world?</p>
-    <p>With <a href="https://www.emilyemeo.com/" target="_blank">Emily E. Meo</a>.</p>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://csvconf.com/2016/#mreeve" target="_blank">csv,conf,v2 talk</a>
-    </h2>
-    <div class="info">
-        <span class="year">2016</span>
-        <a href="https://www.mousereeve.com/static/csvconf-2016-grimoires.pdf" target="_blank">slides</a>
-    </div>
-    <p>Grimoires, Demonology, and Databases</p>
-</div>
-
-
-
-
-<div class="spacer">
-    <p>and spends a lot of time thinking about nonsense.</p>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://fortunes.mousereeve.com/" target="_blank">fortunes</a>
-    </h2>
-    <div class="info">
-        <span class="year">2016</span>
-    </div>
-    <p>Look out for the supernatural avocado</p>
-    <p>With <a href="http://www.julialemke.com/" target="_blank">Julia Lemke</a>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://twitter.com/brand_new_facts" target="_blank">brand new facts</a>
-    </h2>
-    <div class="info">
-        <span class="year">2015</span>
-    </div>
-    <p>The hottest new facts, fresh from the oven</p>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://www.grimoire.org/" target="_blank">grimoire.org</a>
-    </h2>
-    <div class="info">
-        <span class="year">2015</span>
-        <a href="http://blog.bruggen.com/2016/12/podcast-interview-with-mouse-reeve.html?utm_content=buffer1cbe5&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer" target="_blank">interview</a>
-    </div>
-    <p>Indexing historical texts on magic and the occult</p>
-</div>
-
-
-
-
-<div class="spacer">
-    <div class="ascii"> **********************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
-************************************
- **********************************
-    </div>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="/clocks">clocks</a>
-    </h2>
-    <div class="info">
-        <span class="year">2014</span>
-    </div>
-    <p>How much of Mouse's life expectancy has elapsed? <span id="life"></span></p>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="http://www.julialemke.com/index/#/drift/" target="_blank">drift</a>
-    </h2>
-    <div class="info">
-        <span class="year">2013</span>
-    </div>
-    <p>To Make a Dadaist Poem...</p>
-    <p>With <a href="http://www.julialemke.com/" target="_blank">Julia Lemke</a>
-</div>
-
-<div class="card">
-    <h2>
-        <a href="https://boingboing.net/2009/01/10/mandebrot-the-fracta.html" target="_blank">mandelbrot</a>
-    </h2>
-    <div class="info">
-        <span class="year">2010</span>
-    </div>
-    <p>A fractal teddy-bear</p>
-</div>
-
-</div>
-
-<div class="outro">
-    And if you want to click on other things, there's an
-    <a href="/about">about</a> page, my
-    <a href="/resume">resume</a>,
-    <a href="https://tinyletter.com/tripofmice" target="_blank">Tinyletter</a>,
-    and a link to my public
-    <a href="http://pgp.mit.edu/pks/lookup?op=get&search=0xCD9A922FEF10CB25" target="_blank">PGP key</a>
-</div>
-
-<script src="static/js/actions.js"></script>
 {% endblock %}

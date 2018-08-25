@@ -4,15 +4,6 @@
     margin: 0;
 }
 
-body > * {
-    margin: 0 auto;
-    max-width: 82em;
-}
-
-header, footer {
-    position: relative;
-}
-
 .ascii {
     white-space: pre;
     font-family: monospace;
@@ -21,116 +12,73 @@ header, footer {
     overflow: hidden;
 }
 
-h1, nav li, footer p {
-    background-color: white;
-    padding: 0.5em 2em;
-}
-
-h1 {
-    display: inline-block;
+#equation {
     position: absolute;
-    top: 50%;
-    right: 50%;
-    letter-spacing: 0.1em;
-}
-
-nav {
-    position: absolute;
-    bottom: -1.8em;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0.5em 1.5em;
-    font-size: 13pt;
-    font-family: serif;
-}
-
-nav li:last-child {
-    margin-left: 7em;
+    top: 1em;
+    right: 1em;
+    background: #fff;
+    padding: 0.25em 1em;
 }
 
 #main {
-    margin-top: 3em;
+    position: absolute;
+    top: 0;
+}
+
+#content {
+    background-color: #fff;
+    margin: 7.1em;
     padding: 1em;
+    position: relative;
+    width: 28em;
     overflow: auto;
 }
 
-#main > p {
-    margin: 1em 0 5em 5em;
-    max-width: 50em;
-}
-q {
-    font-size: 1.2rem;
-    display: block;
-}
-.caption {
-    float: right;
-}
-
-.cards {
-    overflow: auto;
-}
-
-.card, .spacer {
-    min-height: 11.5rem;
-    width: 11.75rem;
-    float: left;
-    margin: 1em;
-    padding: 1em;
-    border-radius: 5px;
-}
-.card, .clock {
-    border: 1px solid black;
-}
-.spacer {
-    border: 1px solid white;
-}
-.card a h2 {
-    color: black;
-}
-.card p {
-    margin-top: 1em;
-}
-
-.clock {
-    width: 11rem;
-    margin: 1em;
-    padding: 1em;
-    float: left;
-    border-radius: 5px;
-}
-.clock .label {
-    height: 3rem;
-    line-height: 1em;
-}
-
-#resume div {
+#homelink {
     margin-bottom: 1em;
 }
 
-#resume li {
-    list-style: none;
-    display: inline;
-    margin: 0 0.2em;
+h1 {
+    padding-bottom: 1em;
 }
 
-.replace {
-    text-align: center;
-    color: blue;
-    text-decoration: underline;
+#projects {
+    margin-bottom: 15em;
 }
 
-.outro {
-    display: block;
-    margin-top: 3em;
+.project, .clock {
+    float: left;
+    min-width: 13em;
+    margin-right: 1em;
+    padding: 0.15em;
+}
+.project:nth-child(odd) {
+    clear: left;
+    margin-right: 0;
 }
 
-footer {
-    margin-top: 7em;
-}
-footer p {
+.project .description {
+    display: none;
     position: absolute;
-    top: 10%;
-    left: 5em;
+    bottom: 4em;
+    left: 1em;
 }
+
+.project:hover > * {
+    display: block;
+}
+
+.contact a {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.clock {
+     margin-bottom: 0.25em;
+     clear: left;
+}
+
+.clock .label {
+    font-weight: bold;
+}
+
