@@ -22,15 +22,15 @@
 
 #main {
     position: absolute;
+    margin: 7rem 1em 0 15%;
     top: 0;
 }
 
 #content {
     background-color: #fff;
-    margin: 7.1em;
     padding: 1em;
     position: relative;
-    width: 28em;
+    max-width: 28em;
     overflow: auto;
 }
 
