@@ -43,7 +43,8 @@ h1 {
 }
 
 #projects {
-    margin-bottom: 15em;
+    overflow: hidden;
+    margin-bottom: 4em;
 }
 
 .project, .clock {
