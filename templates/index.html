@@ -14,6 +14,11 @@
 {% block body %}
 <h1>Mouse Reeve</h1>
 <div id="projects">
+{% call project('unfamiliar city',
+                'https://unfamiliar.city/') %}
+A guide for the offbeat traveler
+{% endcall %}
+
 {% call project('dockerlang',
                 'https://github.com/connorwalsh/dockerlang',
                 'Connor Walsh',
