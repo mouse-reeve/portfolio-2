@@ -14,6 +14,11 @@
 {% block body %}
 <h1>Mouse Reeve</h1>
 <div id="projects">
+{% call project('gnossiennes',
+                'https://gnossiennes.mousereeve.com/') %}
+Erik Satie forever
+{% endcall %}
+
 {% call project('unfamiliar city',
                 'https://unfamiliar.city/') %}
 A guide for the offbeat traveler
@@ -23,7 +28,7 @@ A guide for the offbeat traveler
                 'https://github.com/connorwalsh/dockerlang',
                 'Connor Walsh',
                 'http://polygon.pizza/') %}
-A turing complete language based on docker containers
+A Turing-complete language based on docker containers
 {% endcall %}
 
 {% call project('in the key of OCR',
