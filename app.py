@@ -55,7 +55,7 @@ def get_placevalue(fun=None, placevalue=None):
 
     return {
         'ascii_header': placevalue_patterner(
-            function[0], 256, 256, placevalue),
+            function[0], 512, 512, placevalue),
         'function': function[1],
         'placevalue': placevalue,
         'function_id': fun,
