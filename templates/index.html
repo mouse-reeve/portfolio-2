@@ -14,6 +14,11 @@
 {% block body %}
 <h1>Mouse Reeve</h1>
 <div id="projects">
+{% call project('new fruits',
+                'https://twitter.com/new_fruits') %}
+Pomological futurology
+{% endcall %}
+
 {% call project('gnossiennes',
                 'https://gnossiennes.mousereeve.com/') %}
 Erik Satie forever
@@ -37,7 +42,7 @@ Converting sheet music to audio with OCR and text to speech
 {% endcall %}
 
 {% call project('oulipo.social',
-                'https://oulipo.social/') %}
+                'https://motherboard.vice.com/en_us/article/z4dve4/its-like-tweeting-but-you-cant-use-the-letter-e') %}
 A Dcntralizd and Fdratd Social Ntwork
 {% endcall %}
 
@@ -47,15 +52,14 @@ A novel in collaboration with Ernest Hemingway and the Wordnik API
 {% endcall %}
 
 {% call project('bird facts',
-                 'https://twitter.com/bird_facts_bot') %}
+                'https://twitter.com/bird_facts_bot') %}
 More like bird malicious gossip
 {% endcall %}
 
 {% call project('all alone now',
                 'https://www.allalonenow.com/',
                 'Emily E. Meo',
-                'https://www.emilyemeo.com/'
-                ) %}
+                'https://www.emilyemeo.com/') %}
 Are we alone in the universe? In the world?
 {% endcall %}
 
