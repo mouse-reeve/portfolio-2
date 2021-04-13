@@ -39,9 +39,9 @@
 
 <body>
 
-    <div class="ascii">{{ ascii_header }}</div>
+    <div class="ascii" aria-hidden="true">{{ ascii_header }}</div>
 
-    <div id="equation"><a href="https://github.com/mouse-reeve/placevalue_ascii">{{ function }}</a>, place value {{ placevalue }}</div>
+    <div id="equation" aria-hidden="true"><a href="https://github.com/mouse-reeve/placevalue_ascii">{{ function }}</a>, place value {{ placevalue }}</div>
     <div id="main">
         <div id="content">
             {% if not is_index %}<p id="homelink"><a href="/">home</a></p>{% endif %}

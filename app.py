@@ -1,10 +1,10 @@
 ''' portfolio site app '''
-from flask import Flask, render_template
-from jinja2.exceptions import TemplateNotFound
 import json
 import math
 import random
 from ascii_art import placevalue_patterner
+from flask import Flask, render_template
+from jinja2.exceptions import TemplateNotFound
 
 app = Flask(__name__)
 
@@ -32,7 +32,7 @@ def get_ascii(function_id, placevalue):
 
 def get_placevalue(fun=None, placevalue=None):
     ''' load a placevalue function '''
-    placevalue = random.randint(6, 8) if placevalue == None else placevalue
+    placevalue = random.randint(6, 8) if placevalue is None else placevalue
 
     functions = [
         [lambda x, y: x ** 2 * y ** 2, 'x^2 * y^2'],
@@ -48,9 +48,9 @@ def get_placevalue(fun=None, placevalue=None):
         [lambda x, y: ((x ** y) * (y ** x)) * 4, '4 * (x^y * y^x)'],
         [lambda x, y: ((x ** y) - (y ** x)) * 8, '8 * (x^y - y^x)'],
     ]
-    if fun != None and (fun < 0 or fun > len(functions) - 1):
+    if fun is not None and (fun < 0 or fun > len(functions) - 1):
         fun = None
-    fun = random.randint(0, len(functions) - 1) if fun == None else fun
+    fun = random.randint(0, len(functions) - 1) if fun is None else fun
     function = functions[fun]
 
     return {
