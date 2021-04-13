@@ -14,6 +14,11 @@
 {% block body %}
 <h1>Mouse Reeve</h1>
 <div id="projects">
+{% call project('bookwyrm',
+                'https://joinbookwyrm.com/') %}
+Social reading and reviewing
+{% endcall %}
+
 {% call project('minimalist piano forever',
                 'https://www.youtube.com/watch?v=ANYMii3Sypg') %}
 Strangeloop 2019
@@ -71,11 +76,6 @@ More like bird malicious gossip
                 'Emily E. Meo',
                 'https://www.emilyemeo.com/') %}
 Are we alone in the universe? In the world?
-{% endcall %}
-
-{% call project('grimoire.org',
-                'https://www.grimoire.org/') %}
-Indexing historical texts on magic and the occult
 {% endcall %}
 
 {% call project('clocks',
