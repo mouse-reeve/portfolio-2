@@ -2,7 +2,7 @@
 <div class="project">
     <p class="title">
         <a href="{{ url }}">{{ title }}</a>
-        {% if collab %}<small>with <a href="{{ collab_url }}" target="_blank">{{ collab }}</a></small>{% endif %}
+        {% if collab %}<small>with {% if collab_url %}<a href="{{ collab_url }}" target="_blank">{% endif %}{{ collab }}{% if collab_url %}</a>{% endif %}</small>{% endif %}
     </p>
     <p class="description">
         {{ caller() }}
@@ -46,8 +46,7 @@ A guide for the offbeat traveler
 
 {% call project('dockerlang',
                 'https://github.com/connorwalsh/dockerlang',
-                'coco walsh',
-                'http://polygon.pizza/') %}
+                'coco walsh') %}
 A Turing-complete language based on docker containers
 {% endcall %}
 
