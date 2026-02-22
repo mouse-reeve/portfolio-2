@@ -2,9 +2,10 @@
 import json
 import math
 import random
-from ascii_art import placevalue_patterner
 from flask import Flask, render_template
 from jinja2.exceptions import TemplateNotFound
+
+from ascii_art import placevalue_patterner
 
 app = Flask(__name__)
 
@@ -21,7 +22,7 @@ def subpage(page):
     """load an arbitrary subpage"""
     data = get_placevalue()
     try:
-        return render_template("%s.html" % page, **data)
+        return render_template(f"{page}.html", **data)
     except TemplateNotFound:
         return render_template("notfound.html", **data), 404
 
